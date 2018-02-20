@@ -16,10 +16,11 @@
     <%= form.text_field :name, id: :service_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type, id: :service_type %>
-  </div>
+
+<%= form.radio_button :person_type, 'Child' %> Child<br />
+<%= form.radio_button :person_type, 'Women' %>Women<br />
+<%= form.radio_button :person_type, 'Men' %> Men<br />
+
 
   <div class="actions">
     <%= form.submit %>
