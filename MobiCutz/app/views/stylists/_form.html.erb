@@ -1,0 +1,32 @@
+<%= form_with(model: stylist, local: true) do |form| %>
+  <% if stylist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stylist.errors.count, "error") %> prohibited this stylist from being saved:</h2>
+
+      <ul>
+      <% stylist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :stylist_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :stylist_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_field :bio, id: :stylist_bio %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
